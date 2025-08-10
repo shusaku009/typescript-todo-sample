@@ -1,3 +1,55 @@
 body {
   padding: 10% 5%;
+
+  .task-input__container {
+    background-color: #c6e5d9;
+    padding: 1.5% 5%;
+    width: 400px;
+    border-radius: 10px;
+    border: none;
+
+    .input-area {
+      background-color: #fff;
+      padding: 3%;
+      width: 60%;
+      border-radius: 10px;
+      border: none;
+    }
+  }
+
+  .task-list_container {
+    margin-top: 5%;
+    padding: 2% 5%;
+    width: 400px;
+    border: 2px solid #c6e5d9;
+    border-radius: 10px;
+
+    .task-button__flex {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  .complete-task__container {
+    background-color: #c9dede;
+    margin-top: 5%;
+    padding: 2% 5%;
+    width: 400px;
+    border: 2px solid #c6e5d9;
+    border-radius: 10px;
+
+    .task-button__flex {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  button {
+    padding: 1.5% 3%;
+
+    border-radius: 10px;
+    border: none;
+  }
 }

@@ -8,18 +8,35 @@
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
-    <div>
-      <input type="text" placeholder="タスクを入力してください" />
+    <div class="task-input__container">
+      <input
+        class="input-area"
+        type="text"
+        name="name"
+        placeholder="タスクを入力してください"
+      />
       <button type="button">追加</button>
     </div>
-    <div>
+    <div class="task-list_container">
       <p>未完了のTODO</p>
-      <ul>
-        <li>TODOです</li>
-      </ul>
-      <button type="button">完了</button>
-      <button type="button">削除</button>
+      <div class="task-button__flex">
+        <ul>
+          <li>TODOです</li>
+        </ul>
+        <button type="button">完了</button>
+        <button type="button">削除</button>
+      </div>
     </div>
+    <div class="complete-task__container">
+      <p>完了のTODO</p>
+      <div class="task-button__flex">
+        <ul>
+          <li>TODOでした</li>
+        </ul>
+        <button type="button">削除</button>
+      </div>
+    </div>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
