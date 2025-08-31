@@ -13,14 +13,15 @@ function onClickAdd(): void {
   p.className = "todo-item";
   p.innerText = inputText;
 
-  div.appendChild(p);
-  li.appendChild(div);
-
   const completeButton = document.createElement("button");
   completeButton.innerText = "完了";
   completeButton.addEventListener("click", () => {
     alert("完了");
   });
+
+  div.appendChild(p);
+  div.appendChild(completeButton);
+  li.appendChild(div);
 
   document.getElementById("incompleted-list")?.appendChild(li);
 }
