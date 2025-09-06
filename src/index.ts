@@ -5,7 +5,8 @@ function onClickAdd(): void {
   (document.getElementById("add-text") as HTMLInputElement).value = "";
 
   const incompletedList = document.getElementById("incompleted-list");
-  if (!incompletedList) return;
+  const completeList = document.getElementById("complete-list");
+  if (!incompletedList || !completeList) return;
   const div = document.createElement("div");
   const ul = document.createElement("ul");
   const li = document.createElement("li");
@@ -18,7 +19,16 @@ function onClickAdd(): void {
   completeButton.innerText = "完了";
   completeButton.type = "button";
   completeButton.addEventListener("click", () => {
-    alert("完了");
+    const moveTarget = completeButton.closest("div");
+    if (!moveTarget || !completeButton || !completeButton.nextElementSibling)
+      return;
+    completeButton.nextElementSibling.remove();
+    completeButton.remove();
+    const returnButton = document.createElement("button");
+    returnButton.innerText = "戻す";
+    console.log("移動対象の要素", moveTarget);
+    div.appendChild(returnButton);
+    completeList.appendChild(moveTarget);
   });
 
   const deleteButton = document.createElement("button");
