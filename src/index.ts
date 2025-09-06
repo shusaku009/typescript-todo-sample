@@ -12,16 +12,17 @@ function onClickAdd(): void {
   li.innerText = inputText;
 
   const completeButton = document.createElement("button");
+  completeButton.id = "complete";
   completeButton.innerText = "完了";
+  completeButton.type = "button";
   completeButton.addEventListener("click", () => {
     alert("完了");
   });
 
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "削除";
+  deleteButton.type = "button";
 
-  console.log("div", div);
-  console.log("完了ボタン", completeButton);
   ul.appendChild(li);
   div.appendChild(ul);
   div.appendChild(completeButton);
