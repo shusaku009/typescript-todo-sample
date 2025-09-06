@@ -4,6 +4,8 @@ function onClickAdd(): void {
   ).value;
   (document.getElementById("add-text") as HTMLInputElement).value = "";
 
+  const incompletedList = document.getElementById("incompleted-list");
+  if (!incompletedList) return;
   const div = document.createElement("div");
   const ul = document.createElement("ul");
   const li = document.createElement("li");
@@ -28,7 +30,7 @@ function onClickAdd(): void {
   div.appendChild(completeButton);
   div.appendChild(deleteButton);
 
-  document.getElementById("incompleted-list")?.appendChild(div);
+  incompletedList?.appendChild(div);
 }
 
 document.getElementById("add-button")?.addEventListener("click", onClickAdd);
