@@ -4,14 +4,12 @@ function onClickAdd(): void {
   ).value;
   (document.getElementById("add-text") as HTMLInputElement).value = "";
 
-  const li = document.createElement("li");
-
   const div = document.createElement("div");
-  div.className = "list-row";
+  const ul = document.createElement("ul");
+  const li = document.createElement("li");
+  div.className = "task-button__flex";
 
-  const p = document.createElement("p");
-  p.className = "todo-item";
-  p.innerText = inputText;
+  li.innerText = inputText;
 
   const completeButton = document.createElement("button");
   completeButton.innerText = "完了";
@@ -19,11 +17,17 @@ function onClickAdd(): void {
     alert("完了");
   });
 
-  div.appendChild(p);
-  div.appendChild(completeButton);
-  li.appendChild(div);
+  const deleteButton = document.createElement("button");
+  deleteButton.innerText = "削除";
 
-  document.getElementById("incompleted-list")?.appendChild(li);
+  console.log("div", div);
+  console.log("完了ボタン", completeButton);
+  ul.appendChild(li);
+  div.appendChild(ul);
+  div.appendChild(completeButton);
+  div.appendChild(deleteButton);
+
+  document.getElementById("incompleted-list")?.appendChild(div);
 }
 
 document.getElementById("add-button")?.addEventListener("click", onClickAdd);
