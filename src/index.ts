@@ -26,7 +26,7 @@ function onClickAdd(): void {
     completeButton.remove();
     const returnButton = document.createElement("button");
     returnButton.innerText = "戻す";
-    console.log("移動対象の要素", moveTarget);
+    returnButton.id = "return-button";
     div.appendChild(returnButton);
     completeList.appendChild(moveTarget);
   });
