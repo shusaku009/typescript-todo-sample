@@ -24,6 +24,11 @@ function onClickAdd(): void {
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "削除";
   deleteButton.type = "button";
+  deleteButton.addEventListener("click", () => {
+    const deleteTarget = deleteButton.closest("div");
+    if (!deleteTarget) return;
+    incompletedList.removeChild(deleteTarget);
+  });
 
   ul.appendChild(li);
   div.appendChild(ul);
