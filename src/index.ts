@@ -48,4 +48,24 @@ function onClickAdd(): void {
   incompletedList?.appendChild(div);
 }
 
+function addCompleteButton() {
+  const moveTarget = completeButton.closest("div");
+
+  if (
+    !moveTarget ||
+    !completeButton ||
+    !completeButton.nextElementSibling ||
+    !completeList
+  )
+    return;
+  completeButton.nextElementSibling.remove();
+  completeButton.remove();
+  const returnButton = document.createElement("button");
+  returnButton.innerText = "戻す";
+  returnButton.id = "return-button";
+  div.appendChild(returnButton);
+  completeList.appendChild(moveTarget);
+}
+
 document.getElementById("add-button")?.addEventListener("click", onClickAdd);
+completeButton.addEventListener("click", addCompleteButton);
