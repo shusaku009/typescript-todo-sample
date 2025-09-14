@@ -60,7 +60,7 @@ function onClickAdd(): void {
     returnButton.remove();
     div.appendChild(completeButton);
     div.appendChild(deleteButton);
-    console.log(div);
+    incompletedList?.appendChild(moveTarget);
   });
 
   incompletedList?.appendChild(moveTarget);
