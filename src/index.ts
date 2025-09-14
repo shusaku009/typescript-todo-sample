@@ -24,11 +24,10 @@ function onClickAdd(): void {
   li.innerText = inputText;
 
   deleteButton.addEventListener("click", () => {
-    if (!incompletedList) return;
     const deleteTarget = deleteButton.closest("div");
 
     if (!deleteTarget) return;
-    incompletedList.removeChild(deleteTarget);
+    incompletedList!.removeChild(deleteTarget);
   });
 
   ul.appendChild(li);
@@ -38,13 +37,7 @@ function onClickAdd(): void {
 
   const moveTarget = completeButton.closest("div");
 
-  if (
-    !moveTarget ||
-    !completeButton ||
-    !completeButton.nextElementSibling ||
-    !completeList
-  )
-    return;
+  if (!moveTarget || !completeList) return;
 
   completeButton.addEventListener("click", () => {
     if (!completeButton.nextElementSibling) return;
@@ -62,8 +55,6 @@ function onClickAdd(): void {
     div.appendChild(deleteButton);
     incompletedList?.appendChild(moveTarget);
   });
-
-  incompletedList?.appendChild(moveTarget);
 
   incompletedList?.appendChild(div);
 }
