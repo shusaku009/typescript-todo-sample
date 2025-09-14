@@ -56,6 +56,13 @@ function onClickAdd(): void {
     completeList.appendChild(moveTarget);
   });
 
+  returnButton.addEventListener("click", () => {
+    returnButton.remove();
+    div.appendChild(completeButton);
+    div.appendChild(deleteButton);
+    console.log(div);
+  });
+
   incompletedList?.appendChild(moveTarget);
 
   incompletedList?.appendChild(div);
